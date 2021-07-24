@@ -8,15 +8,14 @@ export type int64 = bigint;
 export type KMap = Record<string, string>;
 
 // Export Definitions
-
-export type AddressClaimSet = Record<
+export type AddressClaimSet = K<
+  Optional<string>,
   | "country"
   | "formatted"
   | "locality"
   | "postal_code"
   | "region"
-  | "street_address",
-  undefined | null | string
+  | "street_address"
 >;
 
 export type Permission =
