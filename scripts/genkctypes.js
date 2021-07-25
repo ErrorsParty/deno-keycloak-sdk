@@ -44,7 +44,6 @@
       item.push(name);
       item.push(optional);
       const kindEl = row.querySelector("td ~ td p");
-      const a = kindEl.children[0];
       let txt = kindEl.innerText;
       let arr = false;
       if (txt.startsWith("< ") && txt.endsWith(" > array")) {
