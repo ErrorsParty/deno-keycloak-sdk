@@ -8,7 +8,7 @@ export type Optional<Value> = Value | null | undefined;
 export interface AccessToken {
   "acr": Optional<string>;
   "address": Optional<AddressClaimSet>;
-  "allowed-origins": Optional<string>[];
+  "allowed-origins": Optional<string[]>;
   "at_hash": Optional<string>;
   "auth_time": Optional<bigint>;
   "authorization": Optional<AccessToken_Authorization>;
@@ -46,7 +46,7 @@ export interface AccessToken {
   "scope": Optional<string>;
   "session_state": Optional<string>;
   "sub": Optional<string>;
-  "trusted-certs": Optional<string>[];
+  "trusted-certs": Optional<string[]>;
   "typ": Optional<string>;
   "updated_at": Optional<bigint>;
   "website": Optional<string>;
@@ -54,12 +54,12 @@ export interface AccessToken {
 }
 
 export interface AccessToken_Access {
-  "roles": Optional<string>[];
+  "roles": Optional<string[]>;
   "verify_caller": Optional<boolean>;
 }
 
 export interface AccessToken_Authorization {
-  "permissions": Optional<Permission>[];
+  "permissions": Optional<Permission[]>;
 }
 
 export interface AccessToken_CertConf {
@@ -98,7 +98,7 @@ export interface AuthenticationExecutionInfoRepresentation {
   "level": Optional<number>;
   "providerId": Optional<string>;
   "requirement": Optional<string>;
-  "requirementChoices": Optional<string>[];
+  "requirementChoices": Optional<string[]>;
 }
 
 export interface AuthenticationExecutionRepresentation {
@@ -115,8 +115,8 @@ export interface AuthenticationExecutionRepresentation {
 export interface AuthenticationFlowRepresentation {
   "alias": Optional<string>;
   "authenticationExecutions": Optional<
-    AuthenticationExecutionExportRepresentation
-  >[];
+    AuthenticationExecutionExportRepresentation[]
+  >;
   "builtIn": Optional<boolean>;
   "description": Optional<string>;
   "id": Optional<string>;
@@ -127,7 +127,7 @@ export interface AuthenticationFlowRepresentation {
 export interface AuthenticatorConfigInfoRepresentation {
   "helpText": Optional<string>;
   "name": Optional<string>;
-  "properties": Optional<ConfigPropertyRepresentation>[];
+  "properties": Optional<ConfigPropertyRepresentation[]>;
   "providerId": Optional<string>;
 }
 
@@ -161,11 +161,11 @@ export interface ClientInitialAccessPresentation {
 export interface ClientMappingsRepresentation {
   "client": Optional<string>;
   "id": Optional<string>;
-  "mappings": Optional<RoleRepresentation>[];
+  "mappings": Optional<RoleRepresentation[]>;
 }
 
 export interface ClientPoliciesRepresentation {
-  "policies": Optional<ClientPolicyRepresentation>[];
+  "policies": Optional<ClientPolicyRepresentation[]>;
 }
 
 export interface ClientPolicyConditionRepresentation {
@@ -179,22 +179,22 @@ export interface ClientPolicyExecutorRepresentation {
 }
 
 export interface ClientPolicyRepresentation {
-  "conditions": Optional<ClientPolicyConditionRepresentation>[];
+  "conditions": Optional<ClientPolicyConditionRepresentation[]>;
   "description": Optional<string>;
   "enabled": Optional<boolean>;
   "name": Optional<string>;
-  "profiles": Optional<string>[];
+  "profiles": Optional<string[]>;
 }
 
 export interface ClientProfileRepresentation {
   "description": Optional<string>;
-  "executors": Optional<ClientPolicyExecutorRepresentation>[];
+  "executors": Optional<ClientPolicyExecutorRepresentation[]>;
   "name": Optional<string>;
 }
 
 export interface ClientProfilesRepresentation {
-  "globalProfiles": Optional<ClientProfileRepresentation>[];
-  "profiles": Optional<ClientProfileRepresentation>[];
+  "globalProfiles": Optional<ClientProfileRepresentation[]>;
+  "profiles": Optional<ClientProfileRepresentation[]>;
 }
 
 export interface ClientRepresentation {
@@ -210,7 +210,7 @@ export interface ClientRepresentation {
   "clientAuthenticatorType": Optional<string>;
   "clientId": Optional<string>;
   "consentRequired": Optional<boolean>;
-  "defaultClientScopes": Optional<string>[];
+  "defaultClientScopes": Optional<string[]>;
   "description": Optional<string>;
   "directAccessGrantsEnabled": Optional<boolean>;
   "enabled": Optional<boolean>;
@@ -222,12 +222,12 @@ export interface ClientRepresentation {
   "nodeReRegistrationTimeout": Optional<number>;
   "notBefore": Optional<number>;
   "oauth2DeviceAuthorizationGrantEnabled": Optional<boolean>;
-  "optionalClientScopes": Optional<string>[];
+  "optionalClientScopes": Optional<string[]>;
   "origin": Optional<string>;
   "protocol": Optional<string>;
-  "protocolMappers": Optional<ProtocolMapperRepresentation>[];
+  "protocolMappers": Optional<ProtocolMapperRepresentation[]>;
   "publicClient": Optional<boolean>;
-  "redirectUris": Optional<string>[];
+  "redirectUris": Optional<string[]>;
   "registeredNodes": Optional<undefined>;
   "registrationAccessToken": Optional<string>;
   "rootUrl": Optional<string>;
@@ -235,7 +235,7 @@ export interface ClientRepresentation {
   "serviceAccountsEnabled": Optional<boolean>;
   "standardFlowEnabled": Optional<boolean>;
   "surrogateAuthRequired": Optional<boolean>;
-  "webOrigins": Optional<string>[];
+  "webOrigins": Optional<string[]>;
 }
 
 export interface ClientScopeEvaluateResource_ProtocolMapperEvaluationRepresentation {
@@ -253,7 +253,7 @@ export interface ClientScopeRepresentation {
   "id": Optional<string>;
   "name": Optional<string>;
   "protocol": Optional<string>;
-  "protocolMappers": Optional<ProtocolMapperRepresentation>[];
+  "protocolMappers": Optional<ProtocolMapperRepresentation[]>;
 }
 
 export interface ComponentExportRepresentation {
@@ -280,7 +280,7 @@ export interface ConfigPropertyRepresentation {
   "helpText": Optional<string>;
   "label": Optional<string>;
   "name": Optional<string>;
-  "options": Optional<string>[];
+  "options": Optional<string[]>;
   "secret": Optional<boolean>;
   "type": Optional<string>;
 }
@@ -304,8 +304,8 @@ export interface FederatedIdentityRepresentation {
 }
 
 export interface GlobalRequestResult {
-  "failedRequests": Optional<string>[];
-  "successRequests": Optional<string>[];
+  "failedRequests": Optional<string[]>;
+  "successRequests": Optional<string[]>;
 }
 
 export interface GroupRepresentation {
@@ -315,8 +315,8 @@ export interface GroupRepresentation {
   "id": Optional<string>;
   "name": Optional<string>;
   "path": Optional<string>;
-  "realmRoles": Optional<string>[];
-  "subGroups": Optional<GroupRepresentation>[];
+  "realmRoles": Optional<string[]>;
+  "subGroups": Optional<GroupRepresentation[]>;
 }
 
 export interface IDToken {
@@ -430,7 +430,7 @@ export interface KeyStoreConfig {
 
 export interface KeysMetadataRepresentation {
   "active": Optional<undefined>;
-  "keys": Optional<KeysMetadataRepresentation_KeyMetadataRepresentation>[];
+  "keys": Optional<KeysMetadataRepresentation_KeyMetadataRepresentation[]>;
 }
 
 export interface KeysMetadataRepresentation_KeyMetadataRepresentation {
@@ -452,7 +452,7 @@ export interface ManagementPermissionReference {
 
 export interface MappingsRepresentation {
   "clientMappings": Optional<undefined>;
-  "realmMappings": Optional<RoleRepresentation>[];
+  "realmMappings": Optional<RoleRepresentation[]>;
 }
 
 export interface MemoryInfoRepresentation {
@@ -472,13 +472,13 @@ export interface MultivaluedHashMap {
 }
 
 export interface PartialImportRepresentation {
-  "clients": Optional<ClientRepresentation>[];
-  "groups": Optional<GroupRepresentation>[];
-  "identityProviders": Optional<IdentityProviderRepresentation>[];
+  "clients": Optional<ClientRepresentation[]>;
+  "groups": Optional<GroupRepresentation[]>;
+  "identityProviders": Optional<IdentityProviderRepresentation[]>;
   "ifResourceExists": Optional<string>;
   "policy": Optional<"SKIP" | "OVERWRITE" | "FAIL">;
   "roles": Optional<RolesRepresentation>;
-  "users": Optional<UserRepresentation>[];
+  "users": Optional<UserRepresentation[]>;
 }
 
 export interface PasswordPolicyTypeRepresentation {
@@ -493,7 +493,7 @@ export interface Permission {
   "claims": Optional<undefined>;
   "rsid": Optional<string>;
   "rsname": Optional<string>;
-  "scopes": Optional<string>[];
+  "scopes": Optional<string[]>;
 }
 
 export interface PolicyRepresentation {
@@ -504,19 +504,19 @@ export interface PolicyRepresentation {
   "logic": Optional<"POSITIVE" | "NEGATIVE">;
   "name": Optional<string>;
   "owner": Optional<string>;
-  "policies": Optional<string>[];
-  "resources": Optional<string>[];
-  "resourcesData": Optional<ResourceRepresentation>[];
-  "scopes": Optional<string>[];
-  "scopesData": Optional<ScopeRepresentation>[];
+  "policies": Optional<string[]>;
+  "resources": Optional<string[]>;
+  "resourcesData": Optional<ResourceRepresentation[]>;
+  "scopes": Optional<string[]>;
+  "scopesData": Optional<ScopeRepresentation[]>;
   "type": Optional<string>;
 }
 
 export interface ProfileInfoRepresentation {
-  "disabledFeatures": Optional<string>[];
-  "experimentalFeatures": Optional<string>[];
+  "disabledFeatures": Optional<string[]>;
+  "experimentalFeatures": Optional<string[]>;
   "name": Optional<string>;
-  "previewFeatures": Optional<string>[];
+  "previewFeatures": Optional<string[]>;
 }
 
 export interface ProtocolMapperRepresentation {
@@ -535,10 +535,10 @@ export interface ProviderRepresentation {
 export interface RealmEventsConfigRepresentation {
   "adminEventsDetailsEnabled": Optional<boolean>;
   "adminEventsEnabled": Optional<boolean>;
-  "enabledEventTypes": Optional<string>[];
+  "enabledEventTypes": Optional<string[]>;
   "eventsEnabled": Optional<boolean>;
   "eventsExpiration": Optional<bigint>;
-  "eventsListeners": Optional<string>[];
+  "eventsListeners": Optional<string[]>;
 }
 
 export interface RealmRepresentation {
@@ -554,8 +554,8 @@ export interface RealmRepresentation {
   "adminEventsEnabled": Optional<boolean>;
   "adminTheme": Optional<string>;
   "attributes": Optional<undefined>;
-  "authenticationFlows": Optional<AuthenticationFlowRepresentation>[];
-  "authenticatorConfig": Optional<AuthenticatorConfigRepresentation>[];
+  "authenticationFlows": Optional<AuthenticationFlowRepresentation[]>;
+  "authenticatorConfig": Optional<AuthenticatorConfigRepresentation[]>;
   "browserFlow": Optional<string>;
   "browserSecurityHeaders": Optional<undefined>;
   "bruteForceProtected": Optional<boolean>;
@@ -565,15 +565,15 @@ export interface RealmRepresentation {
   "clientPolicies": Optional<JsonNode>;
   "clientProfiles": Optional<JsonNode>;
   "clientScopeMappings": Optional<undefined>;
-  "clientScopes": Optional<ClientScopeRepresentation>[];
+  "clientScopes": Optional<ClientScopeRepresentation[]>;
   "clientSessionIdleTimeout": Optional<number>;
   "clientSessionMaxLifespan": Optional<number>;
-  "clients": Optional<ClientRepresentation>[];
+  "clients": Optional<ClientRepresentation[]>;
   "components": Optional<MultivaluedHashMap>;
-  "defaultDefaultClientScopes": Optional<string>[];
-  "defaultGroups": Optional<string>[];
+  "defaultDefaultClientScopes": Optional<string[]>;
+  "defaultGroups": Optional<string[]>;
   "defaultLocale": Optional<string>;
-  "defaultOptionalClientScopes": Optional<string>[];
+  "defaultOptionalClientScopes": Optional<string[]>;
   "defaultRole": Optional<RoleRepresentation>;
   "defaultSignatureAlgorithm": Optional<string>;
   "directGrantFlow": Optional<string>;
@@ -584,16 +584,16 @@ export interface RealmRepresentation {
   "editUsernameAllowed": Optional<boolean>;
   "emailTheme": Optional<string>;
   "enabled": Optional<boolean>;
-  "enabledEventTypes": Optional<string>[];
+  "enabledEventTypes": Optional<string[]>;
   "eventsEnabled": Optional<boolean>;
   "eventsExpiration": Optional<bigint>;
-  "eventsListeners": Optional<string>[];
+  "eventsListeners": Optional<string[]>;
   "failureFactor": Optional<number>;
-  "federatedUsers": Optional<UserRepresentation>[];
-  "groups": Optional<GroupRepresentation>[];
+  "federatedUsers": Optional<UserRepresentation[]>;
+  "groups": Optional<GroupRepresentation[]>;
   "id": Optional<string>;
-  "identityProviderMappers": Optional<IdentityProviderMapperRepresentation>[];
-  "identityProviders": Optional<IdentityProviderRepresentation>[];
+  "identityProviderMappers": Optional<IdentityProviderMapperRepresentation[]>;
+  "identityProviders": Optional<IdentityProviderRepresentation[]>;
   "internationalizationEnabled": Optional<boolean>;
   "keycloakVersion": Optional<string>;
   "loginTheme": Optional<string>;
@@ -615,10 +615,10 @@ export interface RealmRepresentation {
   "otpPolicyLookAheadWindow": Optional<number>;
   "otpPolicyPeriod": Optional<number>;
   "otpPolicyType": Optional<string>;
-  "otpSupportedApplications": Optional<string>[];
+  "otpSupportedApplications": Optional<string[]>;
   "passwordPolicy": Optional<string>;
   "permanentLockout": Optional<boolean>;
-  "protocolMappers": Optional<ProtocolMapperRepresentation>[];
+  "protocolMappers": Optional<ProtocolMapperRepresentation[]>;
   "quickLoginCheckMilliSeconds": Optional<bigint>;
   "realm": Optional<string>;
   "refreshTokenMaxReuse": Optional<number>;
@@ -626,31 +626,31 @@ export interface RealmRepresentation {
   "registrationEmailAsUsername": Optional<boolean>;
   "registrationFlow": Optional<string>;
   "rememberMe": Optional<boolean>;
-  "requiredActions": Optional<RequiredActionProviderRepresentation>[];
+  "requiredActions": Optional<RequiredActionProviderRepresentation[]>;
   "resetCredentialsFlow": Optional<string>;
   "resetPasswordAllowed": Optional<boolean>;
   "revokeRefreshToken": Optional<boolean>;
   "roles": Optional<RolesRepresentation>;
-  "scopeMappings": Optional<ScopeMappingRepresentation>[];
+  "scopeMappings": Optional<ScopeMappingRepresentation[]>;
   "smtpServer": Optional<undefined>;
   "sslRequired": Optional<string>;
   "ssoSessionIdleTimeout": Optional<number>;
   "ssoSessionIdleTimeoutRememberMe": Optional<number>;
   "ssoSessionMaxLifespan": Optional<number>;
   "ssoSessionMaxLifespanRememberMe": Optional<number>;
-  "supportedLocales": Optional<string>[];
-  "userFederationMappers": Optional<UserFederationMapperRepresentation>[];
-  "userFederationProviders": Optional<UserFederationProviderRepresentation>[];
+  "supportedLocales": Optional<string[]>;
+  "userFederationMappers": Optional<UserFederationMapperRepresentation[]>;
+  "userFederationProviders": Optional<UserFederationProviderRepresentation[]>;
   "userManagedAccessAllowed": Optional<boolean>;
-  "users": Optional<UserRepresentation>[];
+  "users": Optional<UserRepresentation[]>;
   "verifyEmail": Optional<boolean>;
   "waitIncrementSeconds": Optional<number>;
-  "webAuthnPolicyAcceptableAaguids": Optional<string>[];
+  "webAuthnPolicyAcceptableAaguids": Optional<string[]>;
   "webAuthnPolicyAttestationConveyancePreference": Optional<string>;
   "webAuthnPolicyAuthenticatorAttachment": Optional<string>;
   "webAuthnPolicyAvoidSameAuthenticatorRegister": Optional<boolean>;
   "webAuthnPolicyCreateTimeout": Optional<number>;
-  "webAuthnPolicyPasswordlessAcceptableAaguids": Optional<string>[];
+  "webAuthnPolicyPasswordlessAcceptableAaguids": Optional<string[]>;
   "webAuthnPolicyPasswordlessAttestationConveyancePreference": Optional<string>;
   "webAuthnPolicyPasswordlessAuthenticatorAttachment": Optional<string>;
   "webAuthnPolicyPasswordlessAvoidSameAuthenticatorRegister": Optional<boolean>;
@@ -658,12 +658,12 @@ export interface RealmRepresentation {
   "webAuthnPolicyPasswordlessRequireResidentKey": Optional<string>;
   "webAuthnPolicyPasswordlessRpEntityName": Optional<string>;
   "webAuthnPolicyPasswordlessRpId": Optional<string>;
-  "webAuthnPolicyPasswordlessSignatureAlgorithms": Optional<string>[];
+  "webAuthnPolicyPasswordlessSignatureAlgorithms": Optional<string[]>;
   "webAuthnPolicyPasswordlessUserVerificationRequirement": Optional<string>;
   "webAuthnPolicyRequireResidentKey": Optional<string>;
   "webAuthnPolicyRpEntityName": Optional<string>;
   "webAuthnPolicyRpId": Optional<string>;
-  "webAuthnPolicySignatureAlgorithms": Optional<string>[];
+  "webAuthnPolicySignatureAlgorithms": Optional<string[]>;
   "webAuthnPolicyUserVerificationRequirement": Optional<string>;
 }
 
@@ -684,9 +684,9 @@ export interface ResourceRepresentation {
   "icon_uri": Optional<string>;
   "name": Optional<string>;
   "ownerManagedAccess": Optional<boolean>;
-  "scopes": Optional<ScopeRepresentation>[];
+  "scopes": Optional<ScopeRepresentation[]>;
   "type": Optional<string>;
-  "uris": Optional<string>[];
+  "uris": Optional<string[]>;
 }
 
 export interface ResourceServerRepresentation {
@@ -695,10 +695,10 @@ export interface ResourceServerRepresentation {
   "decisionStrategy": Optional<"AFFIRMATIVE" | "UNANIMOUS" | "CONSENSUS">;
   "id": Optional<string>;
   "name": Optional<string>;
-  "policies": Optional<PolicyRepresentation>[];
+  "policies": Optional<PolicyRepresentation[]>;
   "policyEnforcementMode": Optional<"ENFORCING" | "PERMISSIVE" | "DISABLED">;
-  "resources": Optional<ResourceRepresentation>[];
-  "scopes": Optional<ScopeRepresentation>[];
+  "resources": Optional<ResourceRepresentation[]>;
+  "scopes": Optional<ScopeRepresentation[]>;
 }
 
 export interface RoleRepresentation {
@@ -714,18 +714,18 @@ export interface RoleRepresentation {
 
 export interface RoleRepresentation_Composites {
   "client": Optional<undefined>;
-  "realm": Optional<string>[];
+  "realm": Optional<string[]>;
 }
 
 export interface RolesRepresentation {
   "client": Optional<undefined>;
-  "realm": Optional<RoleRepresentation>[];
+  "realm": Optional<RoleRepresentation[]>;
 }
 
 export interface ScopeMappingRepresentation {
   "client": Optional<string>;
   "clientScope": Optional<string>;
-  "roles": Optional<string>[];
+  "roles": Optional<string[]>;
   "self": Optional<string>;
 }
 
@@ -734,23 +734,23 @@ export interface ScopeRepresentation {
   "iconUri": Optional<string>;
   "id": Optional<string>;
   "name": Optional<string>;
-  "policies": Optional<PolicyRepresentation>[];
-  "resources": Optional<ResourceRepresentation>[];
+  "policies": Optional<PolicyRepresentation[]>;
+  "resources": Optional<ResourceRepresentation[]>;
 }
 
 export interface ServerInfoRepresentation {
   "builtinProtocolMappers": Optional<undefined>;
-  "clientImporters": Optional<undefined>[];
+  "clientImporters": Optional<undefined[]>;
   "clientInstallations": Optional<undefined>;
   "componentTypes": Optional<undefined>;
   "enums": Optional<undefined>;
-  "identityProviders": Optional<undefined>[];
+  "identityProviders": Optional<undefined[]>;
   "memoryInfo": Optional<MemoryInfoRepresentation>;
-  "passwordPolicies": Optional<PasswordPolicyTypeRepresentation>[];
+  "passwordPolicies": Optional<PasswordPolicyTypeRepresentation[]>;
   "profileInfo": Optional<ProfileInfoRepresentation>;
   "protocolMapperTypes": Optional<undefined>;
   "providers": Optional<undefined>;
-  "socialProviders": Optional<undefined>[];
+  "socialProviders": Optional<undefined[]>;
   "systemInfo": Optional<SystemInfoRepresentation>;
   "themes": Optional<undefined>;
 }
@@ -805,7 +805,7 @@ export interface TestLdapConnectionRepresentation {
 export interface UserConsentRepresentation {
   "clientId": Optional<string>;
   "createdDate": Optional<bigint>;
-  "grantedClientScopes": Optional<string>[];
+  "grantedClientScopes": Optional<string[]>;
   "lastUpdatedDate": Optional<bigint>;
 }
 
@@ -831,24 +831,24 @@ export interface UserFederationProviderRepresentation {
 export interface UserRepresentation {
   "access": Optional<undefined>;
   "attributes": Optional<undefined>;
-  "clientConsents": Optional<UserConsentRepresentation>[];
+  "clientConsents": Optional<UserConsentRepresentation[]>;
   "clientRoles": Optional<undefined>;
   "createdTimestamp": Optional<bigint>;
-  "credentials": Optional<CredentialRepresentation>[];
-  "disableableCredentialTypes": Optional<string>[];
+  "credentials": Optional<CredentialRepresentation[]>;
+  "disableableCredentialTypes": Optional<string[]>;
   "email": Optional<string>;
   "emailVerified": Optional<boolean>;
   "enabled": Optional<boolean>;
-  "federatedIdentities": Optional<FederatedIdentityRepresentation>[];
+  "federatedIdentities": Optional<FederatedIdentityRepresentation[]>;
   "federationLink": Optional<string>;
   "firstName": Optional<string>;
-  "groups": Optional<string>[];
+  "groups": Optional<string[]>;
   "id": Optional<string>;
   "lastName": Optional<string>;
   "notBefore": Optional<number>;
   "origin": Optional<string>;
-  "realmRoles": Optional<string>[];
-  "requiredActions": Optional<string>[];
+  "realmRoles": Optional<string[]>;
+  "requiredActions": Optional<string[]>;
   "self": Optional<string>;
   "serviceAccountClientId": Optional<string>;
   "username": Optional<string>;

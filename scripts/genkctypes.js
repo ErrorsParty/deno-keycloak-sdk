@@ -12,13 +12,12 @@
     .set("boolean", "boolean");
 
   let compiledOutput = "" +
+    "// deno-lint-ignore-file camelcase (Because payloads from keycloak doesn't use camlecasing)\n\n" +
     "// This is file is generated from the following URL:\n" +
     "// " +
     ((_ = location.href.indexOf("#")) =>
       location.href.substring(0, _ > -1 ? _ : location.href.length))() +
-    "\n" +
-    "// with the script located at:\n" +
-    "https://github.com/ErrorsParty/deno-keycloak-sdk/...somewhere...\n\n" +
+    "\n\n" +
     "export type Optional<Value> = Value | null | undefined;\n\n";
 
   const nameRegex = /\n.*optional$/g;
@@ -69,8 +68,8 @@
       compiledOutput += '  "' + name + '": ';
       if (optional) compiledOutput += "Optional<";
       compiledOutput += typeMap.get(kind);
-      if (optional) compiledOutput += ">";
       if (arr) compiledOutput += "[]";
+      if (optional) compiledOutput += ">";
       compiledOutput += ";\n";
     }
     compiledOutput += "}\n\n";
