@@ -12,6 +12,9 @@
 !/.gitignore
 !/lib/
 !/lib/**/*.ts
+!/scripts/
+!/scripts/**/*.ts
+!/scripts/**/*.js
 !/tests/
 !/tests/**/*.ts
 !/LICENSE
