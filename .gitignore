@@ -17,5 +17,7 @@
 !/scripts/**/*.js
 !/tests/
 !/tests/**/*.ts
+!/mod.ts
+!/deps.ts
 !/LICENSE
 !/README.md
