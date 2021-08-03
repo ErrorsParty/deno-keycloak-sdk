@@ -11,6 +11,7 @@
 !/.vscode/settings.json
 !/.gitignore
 !/lib/
+!/lib/**/
 !/lib/**/*.ts
 !/scripts/
 !/scripts/**/*.ts

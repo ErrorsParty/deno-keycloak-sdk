@@ -1,7 +1,7 @@
 // deno-lint-ignore-file camelcase (Because payloads from keycloak doesn't use camlecasing)
 
 // This is file is generated from the following URL:
-// https://www.keycloak.org/docs-api/14.0/rest-api/
+// https://www.keycloak.org/docs-api/15.0/rest-api/index.html
 
 export type Optional<Value> = Value | null | undefined;
 
@@ -16,7 +16,13 @@ export interface AccessToken {
   "birthdate": Optional<string>;
   "c_hash": Optional<string>;
   "category": Optional<
-    "INTERNAL" | "ACCESS" | "ID" | "ADMIN" | "USERINFO" | "LOGOUT"
+    | "INTERNAL"
+    | "ACCESS"
+    | "ID"
+    | "ADMIN"
+    | "USERINFO"
+    | "LOGOUT"
+    | "AUTHORIZATION_RESPONSE"
   >;
   "claims_locales": Optional<string>;
   "cnf": Optional<AccessToken_CertConf>;
@@ -45,6 +51,7 @@ export interface AccessToken {
   "s_hash": Optional<string>;
   "scope": Optional<string>;
   "session_state": Optional<string>;
+  "sid": Optional<string>;
   "sub": Optional<string>;
   "trusted-certs": Optional<string[]>;
   "typ": Optional<string>;
@@ -328,7 +335,13 @@ export interface IDToken {
   "birthdate": Optional<string>;
   "c_hash": Optional<string>;
   "category": Optional<
-    "INTERNAL" | "ACCESS" | "ID" | "ADMIN" | "USERINFO" | "LOGOUT"
+    | "INTERNAL"
+    | "ACCESS"
+    | "ID"
+    | "ADMIN"
+    | "USERINFO"
+    | "LOGOUT"
+    | "AUTHORIZATION_RESPONSE"
   >;
   "claims_locales": Optional<string>;
   "email": Optional<string>;
@@ -354,6 +367,7 @@ export interface IDToken {
   "profile": Optional<string>;
   "s_hash": Optional<string>;
   "session_state": Optional<string>;
+  "sid": Optional<string>;
   "sub": Optional<string>;
   "typ": Optional<string>;
   "updated_at": Optional<bigint>;
@@ -442,6 +456,7 @@ export interface KeysMetadataRepresentation_KeyMetadataRepresentation {
   "publicKey": Optional<string>;
   "status": Optional<string>;
   "type": Optional<string>;
+  "use": Optional<"SIG" | "ENC">;
 }
 
 export interface ManagementPermissionReference {
